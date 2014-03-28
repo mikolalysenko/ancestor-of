@@ -5,6 +5,27 @@ Preprocess a tree (encoded as a JSON object) so that given any two nodes in the 
 # Example
 
 ```javascript
+var preprocess = require("ancestor-of")
+
+//Construct some tree
+var tree = {
+  a: {
+    x: {},
+    y: {}
+  },
+  b: [ [], [[]] ]
+}
+
+//Construct ancestorOf data structure
+var ancestorOf = preprocess(tree)
+
+//Now we can check ancestor relations on elements of tree:
+var assert = require("assert")
+
+assert.ok(ancestorOf(tree.a, tree.a.x))
+assert.ok(!ancestorOf(tree.a.ax, tree.a))
+assert.ok(!ancestorOf(tree.b, tree.a))
+assert.ok(ancestorOf(tree.b, tree.b[1][0]))
 ```
 
 # Install
