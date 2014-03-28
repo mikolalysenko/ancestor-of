@@ -1,0 +1,35 @@
+{
+  "name": "ancestor-of",
+  "version": "0.0.0",
+  "description": "Test if a node is an ancestor of another node in a tree",
+  "main": "ancestor-of.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mikolalysenko/ancestor-of.git"
+  },
+  "keywords": [
+    "ancestor",
+    "query",
+    "tree",
+    "json",
+    "preprocess"
+  ],
+  "author": "Mikola Lysenko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mikolalysenko/ancestor-of/issues"
+  },
+  "homepage": "https://github.com/mikolalysenko/ancestor-of",
+  "devDependencies": {
+    "tape": "^2.12.0"
+  },
+  "dependencies": {
+    "weakmap": "0.0.6"
+  }
+}

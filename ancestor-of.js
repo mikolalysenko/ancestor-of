@@ -1,5 +1,7 @@
 "use strict"
 
+module.exports = preprocessTreeAncestor
+
 var weakMap = typeof WeakMap === "undefined" ? require("weakmap") : WeakMap
 
 function EulerData(left, right) {
@@ -21,7 +23,7 @@ function preprocessTreeAncestor(root) {
       var left = counter++
       Object.keys(node).forEach(function(id) {
         var child = node[id]
-        if(typeof child === "object") {
+        if((typeof child === "object") && (child !== null)) {
           visit(child)
         }
       })
