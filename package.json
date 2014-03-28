@@ -1,6 +1,6 @@
 {
   "name": "ancestor-of",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Test if a node is an ancestor of another node in a tree",
   "main": "ancestor-of.js",
   "directories": {
