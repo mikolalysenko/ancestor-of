@@ -9,7 +9,7 @@ function EulerData(left, right) {
   this.right = right
 }
 
-function preprocessTreeAncestor(root) {
+function preprocessTreeAncestor(root, filter) {
   var euler
 
   function rebuildAncestor() {
@@ -24,7 +24,9 @@ function preprocessTreeAncestor(root) {
       Object.keys(node).forEach(function(id) {
         var child = node[id]
         if((typeof child === "object") && (child !== null)) {
-          visit(child)
+          if(!filter || filter(node, id)) {
+            visit(child)
+          }
         }
       })
       var right = counter++
