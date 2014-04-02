@@ -36,16 +36,15 @@ npm install ancestor-of
 
 # API
 
-### `var ancestorOf = require("ancestor-of")(tree[,filter])`
+### `var ancestorOf = require("ancestor-of")(tree[,childrenOf(node)])`
 Preprocesses `tree` to answer ancestor queries.
 
 * `tree` is the root of a JSON object tree
-* `filter(node,child)` is an optional function, which if passed determines which subtrees the augmentation is applied to.  The interpretation of these arguments is:
+* `childrenOf(node)` is an optional function which returns an array of children of `node`
 
     + `node` is the subtree node
-    + `child` is a string representing the child property of node
 
-    `filter` should return a truthy value if `node[child]` should be augmented, or a falsey value if it should be skipped.
+    `childrenOf` should return an array of all possible children of node
 
 **Returns** A query which answers ancestor queries
 

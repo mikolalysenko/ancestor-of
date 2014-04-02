@@ -39,11 +39,18 @@ tape("ancestor-of", function(t) {
     }
   }
 
+  function defaultChildrenOf(node) {
+    return Object.keys(node).map(function(id) {
+      return node[id]
+    })
+  }
+
   function verifyTree(tree) {
     var ancestorOf = preprocess(tree)
     verifyQuery(tree, ancestorOf)
     ancestorOf.rebuild()
     verifyQuery(tree, ancestorOf)
+    verifyQuery(tree, preprocess(tree, defaultChildrenOf))
   }
 
   verifyTree({
